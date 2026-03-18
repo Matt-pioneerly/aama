@@ -764,6 +764,82 @@
                 height: 320px;
             }
         }
+
+        /* HubSpot Form Styling */
+        .hs-form-frame {
+            margin-top: 2rem;
+        }
+
+        .hbspt-form {
+            background: transparent !important;
+        }
+
+        .hbspt-form .hs-form {
+            background: transparent !important;
+        }
+
+        .hbspt-form label {
+            color: var(--text) !important;
+            font-weight: 500 !important;
+            font-size: 0.95rem !important;
+            margin-bottom: 0.5rem !important;
+            display: block !important;
+        }
+
+        .hbspt-form input[type="text"],
+        .hbspt-form input[type="email"],
+        .hbspt-form input[type="tel"],
+        .hbspt-form select {
+            width: 100% !important;
+            padding: 0.875rem 1rem !important;
+            border: 1px solid var(--border) !important;
+            border-radius: 8px !important;
+            font-size: 1rem !important;
+            background: white !important;
+            color: var(--text) !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .hbspt-form input:focus,
+        .hbspt-form select:focus {
+            outline: none !important;
+            border-color: var(--accent) !important;
+            box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1) !important;
+        }
+
+        .hbspt-form .hs-button {
+            background: var(--accent) !important;
+            color: var(--navy) !important;
+            border: none !important;
+            padding: 1rem 2.5rem !important;
+            border-radius: 8px !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            width: 100% !important;
+            margin-top: 1rem !important;
+        }
+
+        .hbspt-form .hs-button:hover {
+            background: var(--accent-light) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3) !important;
+        }
+
+        .hbspt-form .hs-error-msgs {
+            color: #dc2626 !important;
+            font-size: 0.875rem !important;
+            margin-top: 0.5rem !important;
+        }
+
+        .hbspt-form .hs-form-field {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .hbspt-form .hs-richtext {
+            color: var(--text) !important;
+        }
     </style>
 </head>
 <body>
