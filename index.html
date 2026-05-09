@@ -25,13 +25,13 @@
             --shadow: rgba(26, 35, 50, 0.06);
             --shadow-lg: rgba(26, 35, 50, 0.1);
         }
-
+ 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+ 
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text);
@@ -41,13 +41,13 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
+ 
         .container {
             max-width: 1320px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
+ 
         /* Header */
         header {
             background: rgba(255, 255, 255, 0.95);
@@ -58,19 +58,19 @@
             top: 0;
             z-index: 1000;
         }
-
+ 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+ 
         .logo {
             height: 52px;
             width: auto;
             object-fit: contain;
         }
-
+ 
         .header-cta {
             background: var(--navy);
             color: white;
@@ -82,13 +82,13 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px var(--shadow);
         }
-
+ 
         .header-cta:hover {
             background: var(--navy-light);
             transform: translateY(-1px);
             box-shadow: 0 4px 12px var(--shadow-lg);
         }
-
+ 
         /* Hero Section */
         section.hero {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -97,7 +97,7 @@
             position: relative;
             overflow: hidden;
         }
-
+ 
         .hero::before {
             content: '';
             position: absolute;
@@ -109,7 +109,7 @@
             border-radius: 50%;
             pointer-events: none;
         }
-
+ 
         .hero-content {
             max-width: 850px;
             margin: 0 auto;
@@ -117,7 +117,7 @@
             position: relative;
             z-index: 1;
         }
-
+ 
         .hero h1 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: clamp(2.75rem, 6vw, 5rem);
@@ -127,7 +127,7 @@
             letter-spacing: -0.03em;
             color: white;
         }
-
+ 
         .hero-description {
             font-size: clamp(1.125rem, 2vw, 1.375rem);
             margin-bottom: 3rem;
@@ -138,7 +138,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+ 
         .hero-cta {
             display: inline-flex;
             align-items: center;
@@ -153,23 +153,23 @@
             transition: all 0.3s ease;
             box-shadow: 0 6px 20px rgba(201, 169, 97, 0.25);
         }
-
+ 
         .hero-cta:hover {
             background: var(--accent-light);
             transform: translateY(-2px);
             box-shadow: 0 8px 28px rgba(201, 169, 97, 0.35);
         }
-
+ 
         /* Section Styles */
         section {
             padding: 7rem 0;
             position: relative;
         }
-
+ 
         .section-header {
             margin-bottom: 4.5rem;
         }
-
+ 
         .section-label {
             font-size: 0.8125rem;
             text-transform: uppercase;
@@ -179,7 +179,7 @@
             margin-bottom: 1rem;
             display: inline-block;
         }
-
+ 
         .section-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: clamp(2.25rem, 5vw, 3.75rem);
@@ -189,7 +189,7 @@
             letter-spacing: -0.03em;
             line-height: 1.2;
         }
-
+ 
         .section-description {
             font-size: 1.125rem;
             color: var(--text-light);
@@ -197,20 +197,20 @@
             line-height: 1.75;
             font-weight: 400;
         }
-
-        /* Mission Section - Modern Split */
+ 
+        /* Mission Section */
         .mission-section {
             background: var(--bg-warm);
             padding: 8rem 0;
         }
-
+ 
         .mission-wrapper {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
             gap: 5rem;
             align-items: center;
         }
-
+ 
         .mission-visual {
             position: relative;
             height: 420px;
@@ -222,8 +222,7 @@
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             padding: 3rem;
         }
-
-
+ 
         .mission-visual img {
             width: 75%;
             height: 75%;
@@ -232,11 +231,11 @@
             position: relative;
             z-index: 2;
         }
-
+ 
         .mission-content {
             position: relative;
         }
-
+ 
         .mission-lead {
             font-size: 1.75rem;
             font-weight: 600;
@@ -245,31 +244,31 @@
             line-height: 1.4;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-
+ 
         .mission-text {
             font-size: 1.0625rem;
             color: var(--text-light);
             line-height: 1.8;
             font-weight: 400;
         }
-
+ 
         /* Features Section */
         .features-section {
             background: var(--bg);
         }
-
+ 
         .features-wrapper {
             max-width: 1200px;
             margin: 0 auto;
         }
-
+ 
         .features-grid {
             display: grid;
             grid-template-columns: 1.15fr 1fr;
             gap: 2.5rem;
             margin-top: 3.5rem;
         }
-
+ 
         .feature-card {
             background: white;
             border: 1.5px solid var(--border);
@@ -279,23 +278,23 @@
             position: relative;
             overflow: hidden;
         }
-
+ 
         .feature-card:first-child {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             color: white;
             border-color: transparent;
             box-shadow: 0 16px 48px var(--shadow-lg);
         }
-
+ 
         .feature-card:first-child h3,
         .feature-card:first-child p {
             color: white;
         }
-
+ 
         .feature-card:first-child .feature-icon {
             background: var(--accent);
         }
-
+ 
         .feature-card::before {
             content: '';
             position: absolute;
@@ -307,21 +306,21 @@
             transform: scaleY(0);
             transition: transform 0.35s ease;
         }
-
+ 
         .feature-card:hover::before {
             transform: scaleY(1);
         }
-
+ 
         .feature-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 56px var(--shadow-lg);
             border-color: var(--accent);
         }
-
+ 
         .feature-card.coming-soon {
             position: relative;
         }
-
+ 
         .coming-soon-badge {
             position: absolute;
             top: 1.75rem;
@@ -337,7 +336,7 @@
             box-shadow: 0 3px 10px rgba(201, 169, 97, 0.25);
             z-index: 2;
         }
-
+ 
         .feature-icon {
             width: 64px;
             height: 64px;
@@ -349,7 +348,7 @@
             margin-bottom: 1.75rem;
             box-shadow: 0 6px 20px var(--shadow);
         }
-
+ 
         .feature-icon svg {
             width: 32px;
             height: 32px;
@@ -357,7 +356,7 @@
             stroke-width: 2;
             fill: none;
         }
-
+ 
         .feature-card h3 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 2rem;
@@ -366,32 +365,32 @@
             margin-bottom: 1.25rem;
             line-height: 1.3;
         }
-
+ 
         .feature-card p {
             color: var(--text-light);
             line-height: 1.75;
             font-size: 1.0625rem;
             font-weight: 400;
         }
-
+ 
         /* Values Section */
         .values-section {
             background: var(--bg-light);
             padding: 8rem 0;
         }
-
+ 
         .values-wrapper {
             max-width: 1200px;
             margin: 0 auto;
         }
-
+ 
         .values-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3.5rem;
         }
-
+ 
         .value-card {
             background: white;
             padding: 2.75rem;
@@ -401,7 +400,7 @@
             position: relative;
             box-shadow: 0 4px 16px var(--shadow);
         }
-
+ 
         .value-card:nth-child(2) {
             transform: translateY(-1.5rem);
             background: var(--navy);
@@ -409,25 +408,25 @@
             border-color: var(--accent);
             box-shadow: 0 16px 48px var(--shadow-lg);
         }
-
+ 
         .value-card:nth-child(2) h4,
         .value-card:nth-child(2) p {
             color: white;
         }
-
+ 
         .value-card:nth-child(2) .value-icon {
             background: var(--accent);
         }
-
+ 
         .value-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 56px var(--shadow-lg);
         }
-
+ 
         .value-card:nth-child(2):hover {
             transform: translateY(-2rem);
         }
-
+ 
         .value-icon {
             width: 72px;
             height: 72px;
@@ -439,7 +438,7 @@
             margin-bottom: 1.75rem;
             box-shadow: 0 6px 20px var(--shadow);
         }
-
+ 
         .value-icon svg {
             width: 36px;
             height: 36px;
@@ -447,7 +446,7 @@
             stroke-width: 2;
             fill: none;
         }
-
+ 
         .value-card h4 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 1.75rem;
@@ -455,14 +454,14 @@
             color: var(--navy);
             margin-bottom: 1rem;
         }
-
+ 
         .value-card p {
             color: var(--text-light);
             line-height: 1.75;
             font-size: 1rem;
             font-weight: 400;
         }
-
+ 
         /* Certification Section */
         .certification-section {
             background: var(--navy);
@@ -470,7 +469,7 @@
             padding: 8rem 0;
             position: relative;
         }
-
+ 
         .certification-section::before {
             content: '';
             position: absolute;
@@ -481,7 +480,7 @@
             background: linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, transparent 100%);
             pointer-events: none;
         }
-
+ 
         .certification-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.05fr;
@@ -490,7 +489,7 @@
             position: relative;
             z-index: 1;
         }
-
+ 
         .certification-content h3 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 2.75rem;
@@ -499,7 +498,7 @@
             margin-bottom: 1.75rem;
             line-height: 1.2;
         }
-
+ 
         .certification-content p {
             font-size: 1.125rem;
             line-height: 1.8;
@@ -507,7 +506,7 @@
             margin-bottom: 2.5rem;
             font-weight: 400;
         }
-
+ 
         .certification-box {
             background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(16px);
@@ -516,12 +515,12 @@
             padding: 3.25rem;
             box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
         }
-
+ 
         .certification-features {
             display: grid;
             gap: 1.25rem;
         }
-
+ 
         .certification-feature {
             display: flex;
             align-items: center;
@@ -532,13 +531,13 @@
             border-radius: 14px;
             transition: all 0.3s ease;
         }
-
+ 
         .certification-feature:hover {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent);
             transform: translateX(6px);
         }
-
+ 
         .certification-feature svg {
             width: 24px;
             height: 24px;
@@ -547,35 +546,203 @@
             fill: none;
             flex-shrink: 0;
         }
-
+ 
         .certification-feature span {
             font-size: 1.0625rem;
             line-height: 1.6;
             color: white;
             font-weight: 400;
         }
-
+ 
+        /* Blog Section */
+        .blog-section {
+            background: var(--bg);
+            padding: 8rem 0;
+        }
+ 
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3.5rem;
+            align-items: start;
+        }
+ 
+        .blog-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 20px;
+            padding: 2.75rem;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--blue) 100%);
+            border-radius: 3px 0 0 3px;
+            transform: scaleY(0);
+            transition: transform 0.35s ease;
+        }
+ 
+        .blog-card:hover::before {
+            transform: scaleY(1);
+        }
+ 
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 56px var(--shadow-lg);
+            border-color: var(--accent);
+        }
+ 
+        .blog-card--featured {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-color: transparent;
+            box-shadow: 0 16px 48px var(--shadow-lg);
+        }
+ 
+        .blog-card--featured::before {
+            background: var(--accent);
+        }
+ 
+        .blog-card--featured .blog-category {
+            background: rgba(201, 169, 97, 0.2);
+            color: var(--accent);
+        }
+ 
+        .blog-card--featured .blog-date {
+            color: rgba(255, 255, 255, 0.5);
+        }
+ 
+        .blog-card--featured .blog-title {
+            color: white;
+        }
+ 
+        .blog-card--featured .blog-excerpt {
+            color: rgba(255, 255, 255, 0.8);
+        }
+ 
+        .blog-card--featured .blog-link {
+            color: var(--accent);
+            border-color: rgba(201, 169, 97, 0.35);
+        }
+ 
+        .blog-card--featured .blog-link:hover {
+            border-color: var(--accent);
+        }
+ 
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+ 
+        .blog-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(201, 169, 97, 0.12);
+            color: var(--accent);
+            padding: 0.375rem 0.875rem;
+            border-radius: 50px;
+        }
+ 
+        .blog-date {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+ 
+        .blog-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.35;
+            margin: 0;
+        }
+ 
+        .blog-excerpt {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            margin: 0;
+            flex: 1;
+        }
+ 
+        .blog-link {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 0.25rem;
+            align-self: flex-start;
+            transition: all 0.25s ease;
+        }
+ 
+        .blog-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+ 
+        .blog-footer {
+            margin-top: 3rem;
+            text-align: center;
+        }
+ 
+        .blog-view-all {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--navy);
+            padding: 0.875rem 2.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+ 
+        .blog-view-all:hover {
+            background: var(--navy);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--shadow-lg);
+        }
+ 
         /* Contact Section */
         .contact-section {
             background: var(--bg-warm);
         }
-
+ 
         .contact-wrapper {
             max-width: 1200px;
             margin: 0 auto;
         }
-
+ 
         .contact-grid {
             display: flex;
             justify-content: center;
             margin-top: 3.5rem;
         }
-
+ 
         .contact-grid .contact-cta-box {
             max-width: 650px;
             width: 100%;
         }
-
+ 
         .contact-info h3 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 2.5rem;
@@ -583,13 +750,13 @@
             color: var(--navy);
             margin-bottom: 2.75rem;
         }
-
+ 
         .contact-item {
             margin-bottom: 2.25rem;
             padding-left: 1.75rem;
             position: relative;
         }
-
+ 
         .contact-item::before {
             content: '';
             position: absolute;
@@ -600,7 +767,7 @@
             background: linear-gradient(180deg, var(--accent) 0%, var(--blue) 100%);
             border-radius: 2px;
         }
-
+ 
         .contact-label {
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -609,25 +776,25 @@
             font-weight: 600;
             margin-bottom: 0.625rem;
         }
-
+ 
         .contact-value {
             font-size: 1.25rem;
             color: var(--navy);
             font-weight: 500;
         }
-
+ 
         .contact-value a {
             color: var(--blue);
             text-decoration: none;
             transition: all 0.3s ease;
             border-bottom: 1.5px solid transparent;
         }
-
+ 
         .contact-value a:hover {
             color: var(--navy);
             border-bottom-color: var(--accent);
         }
-
+ 
         .contact-cta-box {
             background: var(--navy);
             padding: 3.5rem 2.75rem;
@@ -637,7 +804,7 @@
             position: relative;
             overflow: hidden;
         }
-
+ 
         .contact-cta-box::before {
             content: '';
             position: absolute;
@@ -649,14 +816,14 @@
             pointer-events: none;
             z-index: 0;
         }
-
+ 
         .contact-cta-box h4,
         .contact-cta-box p,
         .contact-cta-box .hs-form-frame {
             position: relative;
             z-index: 1;
         }
-
+ 
         .contact-cta-box h4 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 2rem;
@@ -666,7 +833,7 @@
             position: relative;
             z-index: 1;
         }
-
+ 
         .contact-cta-box p {
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 2.25rem;
@@ -676,7 +843,7 @@
             z-index: 1;
             font-weight: 400;
         }
-
+ 
         .cta-button {
             display: inline-block;
             background: var(--accent);
@@ -690,13 +857,13 @@
             position: relative;
             z-index: 1;
         }
-
+ 
         .cta-button:hover {
             background: var(--accent-light);
             transform: translateY(-2px);
             box-shadow: 0 8px 28px rgba(201, 169, 97, 0.35);
         }
-
+ 
         /* Footer */
         footer {
             background: var(--navy-dark);
@@ -705,7 +872,7 @@
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
-
+ 
         .footer-tagline {
             font-size: 1.25rem;
             color: rgba(255, 255, 255, 0.9);
@@ -716,81 +883,27 @@
             line-height: 1.75;
             font-weight: 400;
         }
-
+ 
         .footer-copyright {
             font-size: 0.875rem;
             color: rgba(255, 255, 255, 0.55);
             padding-top: 2.25rem;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .mission-wrapper,
-            .certification-wrapper,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3.5rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .value-card:nth-child(2) {
-                transform: translateY(0);
-            }
-
-            .value-card:nth-child(2):hover {
-                transform: translateY(-6px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            .logo {
-                height: 40px;
-            }
-
-            section {
-                padding: 5rem 0;
-            }
-
-            .hero {
-                padding: 6rem 0 4rem;
-            }
-
-            .feature-card,
-            .certification-box,
-            .contact-cta-box {
-                padding: 2.5rem;
-            }
-
-            .mission-visual {
-                height: 320px;
-            }
-        }
-
+ 
         /* HubSpot Form Styling */
         .hs-form-frame {
             margin-top: 2rem;
         }
-
+ 
         .hbspt-form {
             background: transparent !important;
         }
-
+ 
         .hbspt-form .hs-form {
             background: transparent !important;
         }
-
+ 
         .hbspt-form label {
             color: var(--text) !important;
             font-weight: 500 !important;
@@ -798,7 +911,7 @@
             margin-bottom: 0.5rem !important;
             display: block !important;
         }
-
+ 
         .hbspt-form input[type="text"],
         .hbspt-form input[type="email"],
         .hbspt-form input[type="tel"],
@@ -812,14 +925,14 @@
             color: var(--text) !important;
             transition: all 0.2s ease !important;
         }
-
+ 
         .hbspt-form input:focus,
         .hbspt-form select:focus {
             outline: none !important;
             border-color: var(--accent) !important;
             box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1) !important;
         }
-
+ 
         .hbspt-form .hs-button {
             background: var(--accent) !important;
             color: var(--navy) !important;
@@ -833,43 +946,102 @@
             width: 100% !important;
             margin-top: 1rem !important;
         }
-
+ 
         .hbspt-form .hs-button:hover {
             background: var(--accent-light) !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3) !important;
         }
-
+ 
         .hbspt-form .hs-error-msgs {
             color: #dc2626 !important;
             font-size: 0.875rem !important;
             margin-top: 0.5rem !important;
         }
-
+ 
         .hbspt-form .hs-form-field {
             margin-bottom: 1.5rem !important;
         }
-
+ 
         .hbspt-form .hs-richtext {
             color: var(--text) !important;
         }
-
+ 
         .hbspt-form .submitted-message {
             color: white !important;
         }
-
+ 
         .hbspt-form .hs-main-font-element {
             color: white !important;
         }
-
+ 
         .hbspt-form h2,
         .hbspt-form h3,
         .hbspt-form p {
             color: white !important;
         }
+ 
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .mission-wrapper,
+            .certification-wrapper,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+ 
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+ 
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+ 
+            .value-card:nth-child(2) {
+                transform: translateY(0);
+            }
+ 
+            .value-card:nth-child(2):hover {
+                transform: translateY(-6px);
+            }
+ 
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+ 
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+ 
+            .logo {
+                height: 40px;
+            }
+ 
+            section {
+                padding: 5rem 0;
+            }
+ 
+            .hero {
+                padding: 6rem 0 4rem;
+            }
+ 
+            .feature-card,
+            .certification-box,
+            .contact-cta-box {
+                padding: 2.5rem;
+            }
+ 
+            .mission-visual {
+                height: 320px;
+            }
+        }
     </style>
 </head>
 <body>
+ 
     <!-- Header -->
     <header>
         <div class="container">
@@ -879,7 +1051,7 @@
             </div>
         </div>
     </header>
-
+ 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -890,7 +1062,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Mission Section -->
     <section class="mission-section">
         <div class="container">
@@ -907,16 +1079,16 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">What We Offer</div>
-                <h2 class="section-title">Resources & Community</h2>
+                <h2 class="section-title">Resources &amp; Community</h2>
                 <p class="section-description">Tools and connections designed to help attorneys build thriving practices</p>
             </div>
-
+ 
             <div class="features-wrapper">
                 <div class="features-grid">
                     <div class="feature-card">
@@ -926,7 +1098,7 @@
                         <h3>Best Practices Library</h3>
                         <p>Access curated resources, case studies, and proven strategies from successful attorneys across practice areas. Our library is continuously updated with ethical, effective marketing methodologies.</p>
                     </div>
-
+ 
                     <div class="feature-card coming-soon">
                         <div class="coming-soon-badge">Coming Soon</div>
                         <div class="feature-icon">
@@ -939,7 +1111,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Values Section -->
     <section class="values-section">
         <div class="container">
@@ -949,7 +1121,7 @@
                     <h2 class="section-title">Guardians of Excellence</h2>
                     <p class="section-description">We uphold the highest standards in legal marketing</p>
                 </div>
-
+ 
                 <div class="values-grid">
                     <div class="value-card">
                         <div class="value-icon">
@@ -958,7 +1130,7 @@
                         <h4>Ethical Standards</h4>
                         <p>We maintain strict adherence to legal marketing ethics and professional responsibility guidelines</p>
                     </div>
-
+ 
                     <div class="value-card">
                         <div class="value-icon">
                             <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -966,7 +1138,7 @@
                         <h4>Best Practices</h4>
                         <p>Curated methodologies and strategies validated through real-world implementation and peer review</p>
                     </div>
-
+ 
                     <div class="value-card">
                         <div class="value-icon">
                             <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -978,7 +1150,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Certification Section -->
     <section class="certification-section">
         <div class="container">
@@ -988,7 +1160,7 @@
                     <h3>Organizational Certification</h3>
                     <p>Organizations that join AAMA and meet our standards receive certification recognizing their commitment to ethical marketing practices and professional excellence.</p>
                 </div>
-
+ 
                 <div class="certification-box">
                     <div class="certification-features">
                         <div class="certification-feature">
@@ -1012,7 +1184,54 @@
             </div>
         </div>
     </section>
-
+ 
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Insights</div>
+                <h2 class="section-title">From the AAMA Blog</h2>
+                <p class="section-description">Practical perspectives on legal marketing, practice growth, and professional excellence</p>
+            </div>
+ 
+            <div class="blog-grid">
+                <article class="blog-card blog-card--featured">
+                    <div class="blog-meta">
+                        <span class="blog-category">Practice Growth</span>
+                        <span class="blog-date">May 2025</span>
+                    </div>
+                    <h3 class="blog-title">Why Most Attorney Marketing Fails Before It Starts</h3>
+                    <p class="blog-excerpt">Most attorneys approach marketing as a tactic rather than a system. The result is inconsistent effort, wasted spend, and a pipeline that never stabilizes. Here is what to do instead.</p>
+                    <a href="#" class="blog-link">Read article</a>
+                </article>
+ 
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-category">Ethics</span>
+                        <span class="blog-date">April 2025</span>
+                    </div>
+                    <h3 class="blog-title">Navigating Bar Rules in the Age of AI-Generated Content</h3>
+                    <p class="blog-excerpt">AI tools are changing how law firms produce content. Understanding what the rules permit, and where the risk lies, is essential for any attorney using these platforms.</p>
+                    <a href="#" class="blog-link">Read article</a>
+                </article>
+ 
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-category">SEO</span>
+                        <span class="blog-date">March 2025</span>
+                    </div>
+                    <h3 class="blog-title">Local Search in 2025: What Solo Attorneys Need to Know</h3>
+                    <p class="blog-excerpt">Google's local algorithm has shifted significantly. Attorneys who understood it two years ago may be missing key signals today. This is a practical primer on what has changed.</p>
+                    <a href="#" class="blog-link">Read article</a>
+                </article>
+            </div>
+ 
+            <div class="blog-footer">
+                <a href="#" class="blog-view-all">View all articles</a>
+            </div>
+        </div>
+    </section>
+ 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -1022,12 +1241,12 @@
                     <h2 class="section-title">Join Our Community</h2>
                     <p class="section-description">Connect with forward-thinking attorneys building the future of legal practice</p>
                 </div>
-
+ 
                 <div class="contact-grid">
                     <div class="contact-cta-box">
                         <h4>Ready to Join?</h4>
                         <p>Complete the form below to apply for AAMA membership.</p>
-                        
+ 
                         <!-- HubSpot Form -->
                         <script src="https://js-na2.hsforms.net/forms/embed/244488959.js" defer></script>
                         <div class="hs-form-frame" data-region="na2" data-form-id="b3f7d494-68ec-4dd0-9c6b-bc8f011f65f8" data-portal-id="244488959"></div>
@@ -1036,9 +1255,15 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Footer -->
     <footer>
         <div class="container">
             <p class="footer-tagline">Building the future of legal marketing through collaboration, innovation, and proven results</p>
-            <
+            <p class="footer-copyright">&copy; 2025 American Attorney Marketing Association. All rights reserved.</p>
+        </div>
+    </footer>
+ 
+</body>
+</html>
+ 
