@@ -1,3 +1,6 @@
+Index · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +72,24 @@
             height: 52px;
             width: auto;
             object-fit: contain;
+        }
+ 
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+ 
+        .header-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+ 
+        .header-nav a:hover {
+            color: var(--navy);
         }
  
         .header-cta {
@@ -1047,7 +1068,10 @@
         <div class="container">
             <div class="header-container">
                 <img src="logo.png" alt="American Attorney Marketing Association - Scales of Justice and AAMA Monogram" class="logo">
-                <a href="#contact" class="header-cta">Apply for Membership</a>
+                <nav class="header-nav">
+                    <a href="blog.html">Blog</a>
+                    <a href="#contact" class="header-cta">Apply for Membership</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -1266,4 +1290,3 @@
  
 </body>
 </html>
- 
