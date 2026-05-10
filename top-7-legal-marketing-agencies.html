@@ -501,6 +501,77 @@
             color: var(--navy);
         }
  
+        /* Agency description */
+        .agency-description {
+            font-size: 1.0625rem;
+            line-height: 1.85;
+            color: var(--text-light);
+            margin-bottom: 1.75rem;
+        }
+ 
+        /* Services list */
+        .agency-services {
+            margin: 1.5rem 0 1.75rem;
+        }
+ 
+        .agency-services-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--navy);
+            margin-bottom: 0.875rem;
+        }
+ 
+        .agency-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+ 
+        .agency-service-item {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            font-size: 0.9375rem;
+            color: var(--text-light);
+        }
+ 
+        .agency-service-item::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+ 
+        /* Use case box */
+        .agency-use-case {
+            background: var(--bg-light);
+            border: 1.5px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.375rem 1.5rem;
+            margin: 1.75rem 0 1.5rem;
+        }
+ 
+        .agency-use-case-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+ 
+        .agency-use-case p {
+            font-size: 0.9375rem;
+            color: var(--text-light);
+            line-height: 1.65;
+            margin: 0;
+        }
+ 
         /* Closing section */
         .closing-section {
             background: var(--bg-warm);
@@ -781,9 +852,25 @@
                     </div>
                 </div>
                 <hr class="agency-divider">
-                <p class="agency-review-text">"I've spent 25 years in marketing and advertising and worked with a lot of agencies across a lot of industries. Rankings.io is the one that restored my faith in what an agency partnership should actually look like. I came to them representing a personal injury law firm that needed to compete in a genuinely difficult market, and what I got was an operation that runs with a level of transparency and communication I hadn't seen before. One of my clients saw a 289% increase in organic traffic in a single year, ranking for the high-value keywords that matter in a competitive personal injury market."</p>
+                <p class="agency-description">Rankings.io has built one of the most focused and technically rigorous SEO operations in the legal marketing space. The agency works almost exclusively with law firms, which means their processes, their content frameworks, and their understanding of competitive search dynamics are all calibrated specifically to how attorneys win and lose visibility online. Their client results tend to be substantial and well-documented, and their communication model is unusually transparent for an agency of this type.</p>
+                <p class="agency-review-text">"I've spent 25 years in marketing and advertising and worked with a lot of agencies across a lot of industries. Rankings.io is the one that restored my faith in what an agency partnership should actually look like. One of my clients saw a 289% increase in organic traffic in a single year, ranking for the high-value keywords that matter in a competitive personal injury market."</p>
                 <div class="agency-reviewer">Michael C., Legal Marketing Professional (25 years experience)</div>
                 <div class="review-attribution">Via Lawyerist</div>
+                <div class="agency-services">
+                    <div class="agency-services-label">Core Services</div>
+                    <div class="agency-services-grid">
+                        <span class="agency-service-item">Local &amp; national SEO</span>
+                        <span class="agency-service-item">Content strategy &amp; production</span>
+                        <span class="agency-service-item">Link building</span>
+                        <span class="agency-service-item">Technical SEO audits</span>
+                        <span class="agency-service-item">Keyword research</span>
+                        <span class="agency-service-item">Performance reporting</span>
+                    </div>
+                </div>
+                <div class="agency-use-case">
+                    <div class="agency-use-case-label">Good fit if...</div>
+                    <p>You run a personal injury, mass tort, or other high-volume practice where organic search rankings are the primary driver of new client acquisition, and you're competing in a metro market where top-three visibility is the difference between a full pipeline and an empty one.</p>
+                </div>
                 <div class="agency-tags">
                     <span class="agency-tag">Legal SEO</span>
                     <span class="agency-tag">Local search</span>
@@ -803,9 +890,25 @@
                     </div>
                 </div>
                 <hr class="agency-divider">
-                <p class="agency-review-text">"What struck me in the first conversation with Pioneerly was that they weren't pitching services. They were asking questions: about our referral relationships, how we handled intake, what our conversion rate looked like, whether we had any visibility into which marketing activity was actually driving clients through the door. The first few months were as much about building infrastructure as they were about marketing. We've grown revenue by around 40% over the past year."</p>
+                <p class="agency-description">Pioneerly operates as a growth consultancy rather than a traditional marketing agency: the distinction matters. Where most agencies start with campaigns, Pioneerly starts with infrastructure, asking whether a firm actually has the systems in place to capture and convert what good marketing generates. Their work spans CRM implementation, intake automation, AI tool selection, referral network development, and fractional CMO leadership, alongside more conventional content and digital marketing. For firms that have run campaigns before and been disappointed by the results, the infrastructure-first approach tends to explain why.</p>
+                <p class="agency-review-text">"What struck me in the first conversation with Pioneerly was that they weren't pitching services. They were asking questions: about our referral relationships, how we handled intake, what our conversion rate looked like. The first few months were as much about building infrastructure as they were about marketing. We've grown revenue by around 40% over the past year."</p>
                 <div class="agency-reviewer">Attorney James Whitfield, Managing Partner, Whitfield Family Law Group</div>
                 <div class="review-attribution">Austin, TX</div>
+                <div class="agency-services">
+                    <div class="agency-services-label">Core Services</div>
+                    <div class="agency-services-grid">
+                        <span class="agency-service-item">Fractional CMO</span>
+                        <span class="agency-service-item">CRM &amp; intake automation</span>
+                        <span class="agency-service-item">AI tool implementation</span>
+                        <span class="agency-service-item">Content &amp; SEO strategy</span>
+                        <span class="agency-service-item">Referral system development</span>
+                        <span class="agency-service-item">Growth strategy &amp; roadmapping</span>
+                    </div>
+                </div>
+                <div class="agency-use-case">
+                    <div class="agency-use-case-label">Good fit if...</div>
+                    <p>You're a mid-size firm that has tried marketing before without seeing it translate into measurable growth, you want to understand and adopt AI without knowing exactly where to start, or you need senior strategic guidance without the cost of a full-time CMO.</p>
+                </div>
                 <div class="agency-tags">
                     <span class="agency-tag">AI implementation</span>
                     <span class="agency-tag">Legal tech strategy</span>
@@ -827,9 +930,25 @@
                     </div>
                 </div>
                 <hr class="agency-divider">
-                <p class="agency-review-text">"What Consultwebs did that surprised me was genuinely invest in learning the field. The content they produce is accurate and reflects the nuances of bankruptcy law in a way that makes it easy for us to review and approve. The research is obvious. They focus on substance, not flash, which is exactly what a firm like ours needs. Anytime we've had a conversation about something that wasn't working, they've processed the feedback quickly and adjusted."</p>
+                <p class="agency-description">With over two decades operating specifically in the legal sector, Consultwebs brings a depth of institutional knowledge that generalist agencies simply cannot replicate. They work across a wide range of practice areas and firm sizes, and their reputation is built around sustained, long-term client relationships rather than short-term campaign wins. The breadth of their service offering means firms can consolidate their marketing activity with a single partner that understands the legal landscape.</p>
+                <p class="agency-review-text">"What Consultwebs did that surprised me was genuinely invest in learning the field. The content they produce is accurate and reflects the nuances of bankruptcy law in a way that makes it easy for us to review and approve. They focus on substance, not flash, which is exactly what a firm like ours needs."</p>
                 <div class="agency-reviewer">Marketing Manager, Sasser Law Firm</div>
                 <div class="review-attribution">Cary, NC, via Clutch</div>
+                <div class="agency-services">
+                    <div class="agency-services-label">Core Services</div>
+                    <div class="agency-services-grid">
+                        <span class="agency-service-item">SEO &amp; content marketing</span>
+                        <span class="agency-service-item">PPC &amp; paid media</span>
+                        <span class="agency-service-item">Website design &amp; development</span>
+                        <span class="agency-service-item">Social media management</span>
+                        <span class="agency-service-item">Reputation management</span>
+                        <span class="agency-service-item">Analytics &amp; reporting</span>
+                    </div>
+                </div>
+                <div class="agency-use-case">
+                    <div class="agency-use-case-label">Good fit if...</div>
+                    <p>You run an established firm that wants a reliable, knowledgeable long-term partner across all digital channels, and you value an agency that will genuinely learn your practice area rather than apply a generic playbook.</p>
+                </div>
                 <div class="agency-tags">
                     <span class="agency-tag">20+ years in legal marketing</span>
                     <span class="agency-tag">Full-service digital</span>
@@ -849,9 +968,25 @@
                     </div>
                 </div>
                 <hr class="agency-divider">
-                <p class="agency-review-text">"We needed a marketing partner that could operate across multiple channels simultaneously without losing track of what actually matters: signed cases. The scale of WebFX's team means there's genuine depth behind every discipline they touch. Our leads have increased astronomically since we started working with them. We are very adamant about not changing our contact at WebFX. That kind of loyalty doesn't happen by accident."</p>
+                <p class="agency-description">WebFX is one of the largest performance marketing agencies in the country and brings genuine enterprise-grade infrastructure to law firm clients. Their proprietary analytics platform, MarketingCloudFX, gives clients unusually detailed visibility into campaign performance across channels. For firms managing significant marketing budgets across SEO, PPC, content, and video simultaneously, WebFX has the team depth and operational structure to execute at scale without losing channel cohesion.</p>
+                <p class="agency-review-text">"We needed a marketing partner that could operate across multiple channels simultaneously without losing track of what actually matters: signed cases. The scale of WebFX's team means there's genuine depth behind every discipline they touch. Our leads have increased astronomically since we started working with them."</p>
                 <div class="agency-reviewer">Law firm client</div>
                 <div class="review-attribution">Via WebFX</div>
+                <div class="agency-services">
+                    <div class="agency-services-label">Core Services</div>
+                    <div class="agency-services-grid">
+                        <span class="agency-service-item">SEO at scale</span>
+                        <span class="agency-service-item">PPC &amp; paid social</span>
+                        <span class="agency-service-item">Proprietary analytics (MarketingCloudFX)</span>
+                        <span class="agency-service-item">Video production</span>
+                        <span class="agency-service-item">Content marketing</span>
+                        <span class="agency-service-item">Email marketing</span>
+                    </div>
+                </div>
+                <div class="agency-use-case">
+                    <div class="agency-use-case-label">Good fit if...</div>
+                    <p>You're a larger firm with a substantial marketing budget, running activity across multiple channels, and you want an agency with the operational scale to manage all of it without losing accountability on what's actually driving signed cases.</p>
+                </div>
                 <div class="agency-tags">
                     <span class="agency-tag">Large-scale execution</span>
                     <span class="agency-tag">Advanced SEO &amp; PPC</span>
@@ -872,7 +1007,22 @@
                 </div>
                 <hr class="agency-divider">
                 <div class="editorial-note"><strong>Editor's note:</strong> No usable public client testimonials were identified for MeanPug Digital during research. This section is written in editorial voice. We recommend sourcing a direct client review before publishing.</div>
-                <p>MeanPug Digital occupies an interesting position in the legal marketing landscape. New York-based and boutique in size, the agency combines digital marketing expertise with a strong technology focus, building integrated systems that connect marketing campaigns to intake workflows, CRM platforms, and lead tracking infrastructure. For firms that have learned the hard way that generating leads and actually converting them are two entirely separate problems, MeanPug's approach is refreshingly practical.</p>
+                <p class="agency-description">MeanPug Digital occupies an interesting position in the legal marketing landscape. New York-based and boutique in size, the agency combines digital marketing expertise with a strong technology focus, building integrated systems that connect marketing campaigns to intake workflows, CRM platforms, and lead tracking infrastructure. For firms that have learned the hard way that generating leads and actually converting them are two entirely separate problems, MeanPug's approach is refreshingly practical. They are not a high-volume agency and appear to be selective about client fit, which tends to produce more accountable partnerships.</p>
+                <div class="agency-services">
+                    <div class="agency-services-label">Core Services</div>
+                    <div class="agency-services-grid">
+                        <span class="agency-service-item">Website design &amp; development</span>
+                        <span class="agency-service-item">SEO &amp; paid media</span>
+                        <span class="agency-service-item">CRM integration</span>
+                        <span class="agency-service-item">Intake workflow automation</span>
+                        <span class="agency-service-item">Lead tracking infrastructure</span>
+                        <span class="agency-service-item">Custom technology solutions</span>
+                    </div>
+                </div>
+                <div class="agency-use-case">
+                    <div class="agency-use-case-label">Good fit if...</div>
+                    <p>You're a technology-forward firm that wants marketing and operational systems to work together as a single connected infrastructure, and you're prepared to invest in building something properly rather than patching together disconnected tools.</p>
+                </div>
                 <div class="agency-tags">
                     <span class="agency-tag">CRM integration</span>
                     <span class="agency-tag">Lead capture systems</span>
@@ -892,9 +1042,25 @@
                     </div>
                 </div>
                 <hr class="agency-divider">
-                <p class="agency-review-text">"They ask the right questions. When you start working with them, the first thing they want to understand is not just that you need more business, but what kind of business you need and why. They work with you to understand what you're actually trying to achieve and then backtrack to build the strategy that gets you there. I've stayed with them as long as I have because I continue to get results, and increasingly, the right results."</p>
+                <p class="agency-description">Gladiator Law Marketing has carved out a well-earned reputation among solo practitioners and small firms who have been burned by cookie-cutter agency relationships. Their model is built around genuine customization: before any strategy is set, they spend meaningful time understanding what kind of practice the attorney actually wants to build, not just how many leads they want. The result is a planning process that works backwards from outcomes rather than forwards from tactics, and client relationships that tend to be unusually durable.</p>
+                <p class="agency-review-text">"They ask the right questions. When you start working with them, the first thing they want to understand is not just that you need more business, but what kind of business you need and why. I've stayed with them as long as I have because I continue to get results, and increasingly, the right results."</p>
                 <div class="agency-reviewer">Attorney Dan Carman</div>
                 <div class="review-attribution">Lexington, KY, via Gladiator Law Marketing</div>
+                <div class="agency-services">
+                    <div class="agency-services-label">Core Services</div>
+                    <div class="agency-services-grid">
+                        <span class="agency-service-item">Custom growth strategy</span>
+                        <span class="agency-service-item">SEO &amp; local search</span>
+                        <span class="agency-service-item">Website design</span>
+                        <span class="agency-service-item">Content marketing</span>
+                        <span class="agency-service-item">PPC management</span>
+                        <span class="agency-service-item">Bar compliance review</span>
+                    </div>
+                </div>
+                <div class="agency-use-case">
+                    <div class="agency-use-case-label">Good fit if...</div>
+                    <p>You're a solo attorney or small firm that wants an agency willing to treat your practice as unique, build a strategy around your specific goals, and give you the kind of attention that larger firms in a big agency's portfolio rarely receive.</p>
+                </div>
                 <div class="agency-tags">
                     <span class="agency-tag">Boutique &amp; solo firms</span>
                     <span class="agency-tag">Custom strategy</span>
@@ -914,9 +1080,25 @@
                     </div>
                 </div>
                 <hr class="agency-divider">
-                <p class="agency-review-text">"When we started working with Postali, we were ranked #180 on a list of more than 200 competitors in our market. For all practical purposes, we were invisible. What felt different about Postali from the start was that they didn't jump straight into execution. Before any work was done, they spent real time understanding our competitive position, who we were trying to reach, and what a realistic trajectory looked like for our firm. Within a short time, we were in the top 10."</p>
+                <p class="agency-description">Postali's distinguishing characteristic is patience: theirs and the patience they expect from clients. The agency's model is built around building genuine topical authority through research-led content, strategic positioning work, and sustained execution over time. That approach produces compounding returns that campaign-driven tactics can't match, but it requires a firm leadership team willing to invest without expecting immediate results. For the right kind of client, Postali produces the sort of long-term market position that becomes genuinely difficult for competitors to displace.</p>
+                <p class="agency-review-text">"When we started working with Postali, we were ranked #180 on a list of more than 200 competitors in our market. For all practical purposes, we were invisible. What felt different about Postali from the start was that they didn't jump straight into execution. Within a short time, we were in the top 10."</p>
                 <div class="agency-reviewer">Personal injury law firm partner</div>
                 <div class="review-attribution">Chicago, IL, via Postali</div>
+                <div class="agency-services">
+                    <div class="agency-services-label">Core Services</div>
+                    <div class="agency-services-grid">
+                        <span class="agency-service-item">Competitive positioning strategy</span>
+                        <span class="agency-service-item">Content marketing &amp; thought leadership</span>
+                        <span class="agency-service-item">SEO &amp; authority building</span>
+                        <span class="agency-service-item">Website design &amp; development</span>
+                        <span class="agency-service-item">PR &amp; media outreach</span>
+                        <span class="agency-service-item">Analytics &amp; reporting</span>
+                    </div>
+                </div>
+                <div class="agency-use-case">
+                    <div class="agency-use-case-label">Good fit if...</div>
+                    <p>You're a firm with a long time horizon, willing to invest in building genuine market authority rather than chasing short-term lead volume, and you want a partner who will spend meaningful time on strategic foundations before any execution begins.</p>
+                </div>
                 <div class="agency-tags">
                     <span class="agency-tag">Strategy-first</span>
                     <span class="agency-tag">Content marketing</span>
