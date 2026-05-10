@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigating Bar Rules in the Age of AI-Generated Content | AAMA Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2332; --navy-light: #2d3748; --navy-dark: #0f1419;
+            --accent: #c9a961; --accent-light: #e5c97a;
+            --blue: #2563eb; --text: #1a202c; --text-light: #4a5568;
+            --bg: #ffffff; --bg-light: #f7fafc; --bg-warm: #faf9f7;
+            --border: #e2e8f0; --shadow: rgba(26,35,50,0.06); --shadow-lg: rgba(26,35,50,0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); font-size: 16px; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; }
+        header { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.5rem 0; position: sticky; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 52px; width: auto; object-fit: contain; }
+        .header-nav { display: flex; align-items: center; gap: 2.5rem; }
+        .header-nav a { color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+        .header-nav a:hover { color: var(--navy); }
+        .header-nav a.active { color: var(--navy); font-weight: 600; }
+        .header-nav a.header-cta, .header-nav a.header-cta:hover { color: white; }
+        .header-cta { background: var(--navy); color: white; padding: 0.75rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .header-cta:hover { background: var(--navy-light); transform: translateY(-1px); }
+        .article-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); padding: 5rem 0 4.5rem; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; top: -40%; right: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,169,97,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+        .article-hero-inner { max-width: 860px; position: relative; z-index: 1; }
+        .breadcrumb { display: flex; align-items: center; gap: 0.625rem; margin-bottom: 2rem; font-size: 0.875rem; }
+        .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s ease; }
+        .breadcrumb a:hover { color: var(--accent); }
+        .breadcrumb span { color: rgba(255,255,255,0.35); }
+        .breadcrumb-current { color: rgba(255,255,255,0.6); }
+        .article-category { display: inline-block; background: rgba(201,169,97,0.15); color: var(--accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; }
+        .article-hero h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 700; color: white; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1.75rem; }
+        .article-meta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .article-author { display: flex; align-items: center; gap: 0.75rem; }
+        .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.875rem; color: var(--navy); flex-shrink: 0; }
+        .author-info { display: flex; flex-direction: column; }
+        .author-name { font-size: 0.9375rem; font-weight: 600; color: white; line-height: 1.3; }
+        .author-role { font-size: 0.8125rem; color: rgba(255,255,255,0.55); }
+        .meta-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.15); }
+        .meta-item { font-size: 0.875rem; color: rgba(255,255,255,0.6); }
+        .article-layout { display: grid; grid-template-columns: 1fr 300px; gap: 4rem; max-width: 1160px; margin: 0 auto; padding: 4.5rem 2rem 6rem; align-items: start; }
+        .article-body { min-width: 0; }
+        .article-intro { font-size: 1.1875rem; color: var(--text-light); line-height: 1.8; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1.5px solid var(--border); }
+        .article-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-light); margin-bottom: 1.5rem; }
+        .article-body h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-top: 3rem; margin-bottom: 1.25rem; line-height: 1.3; }
+        .article-body h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); margin-top: 2rem; margin-bottom: 0.875rem; }
+        .callout { background: var(--bg-light); border: 1.5px solid var(--border); border-left: 4px solid var(--accent); border-radius: 14px; padding: 1.75rem 2rem; margin: 2rem 0; }
+        .callout h3 { margin-top: 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy); margin-bottom: 0.875rem; }
+        .callout ul { list-style: none; display: grid; gap: 0.5rem; }
+        .callout ul li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1rem; color: var(--text-light); }
+        .callout ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+        .warning-box { background: #fff8f0; border: 1.5px solid #fde8c8; border-left: 4px solid #f59e0b; border-radius: 14px; padding: 1.75rem 2rem; margin: 2rem 0; }
+        .warning-box h3 { margin-top: 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; margin-bottom: 0.875rem; }
+        .warning-box p { color: #78350f; margin: 0; font-size: 1rem; line-height: 1.7; }
+        .article-sidebar { position: sticky; top: 100px; }
+        .sidebar-card { background: white; border: 1.5px solid var(--border); border-radius: 18px; padding: 2rem; margin-bottom: 1.75rem; }
+        .sidebar-card h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); margin-bottom: 1.25rem; }
+        .toc-list { list-style: none; display: grid; gap: 0.25rem; }
+        .toc-list li a { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--text-light); text-decoration: none; padding: 0.5rem 0.625rem; border-radius: 8px; transition: all 0.2s ease; line-height: 1.4; }
+        .toc-list li a:hover { background: var(--bg-light); color: var(--navy); }
+        .toc-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+        .sidebar-cta { background: var(--navy); border-radius: 18px; padding: 2rem; text-align: center; position: relative; overflow: hidden; }
+        .sidebar-cta::before { content: ''; position: absolute; top: -40%; right: -40%; width: 180%; height: 180%; background: radial-gradient(circle, rgba(201,169,97,0.08) 0%, transparent 70%); pointer-events: none; }
+        .sidebar-cta h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.75rem; position: relative; z-index: 1; }
+        .sidebar-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 1.375rem; position: relative; z-index: 1; }
+        .sidebar-cta a { display: inline-block; background: var(--accent); color: var(--navy); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; position: relative; z-index: 1; }
+        .sidebar-cta a:hover { background: var(--accent-light); transform: translateY(-1px); }
+        footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 4.5rem 0 2.75rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
+        .footer-tagline { font-size: 1.25rem; color: rgba(255,255,255,0.9); margin-bottom: 2.25rem; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+        .footer-copyright { font-size: 0.875rem; color: rgba(255,255,255,0.55); padding-top: 2.25rem; border-top: 1px solid rgba(255,255,255,0.08); }
+        @media (max-width: 1024px) { .article-layout { grid-template-columns: 1fr; gap: 3rem; } .article-sidebar { position: static; } }
+        @media (max-width: 768px) { .container { padding: 0 1.5rem; } .logo { height: 40px; } .article-layout { padding: 3rem 1.5rem 4rem; } .article-hero { padding: 4rem 0 3.5rem; } }
+    </style>
+</head>
+<body>
+ 
+<header>
+    <div class="container">
+        <div class="header-container">
+            <a href="index.html"><img src="logo.png" alt="American Attorney Marketing Association" class="logo"></a>
+            <nav class="header-nav">
+                <a href="library.html" class="active">Library</a>
+                <a href="index.html#contact" class="header-cta">Apply for Membership</a>
+            </nav>
+        </div>
+    </div>
+</header>
+ 
+<section class="article-hero">
+    <div class="container">
+        <div class="article-hero-inner">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a><span>/</span>
+                <a href="library.html">Library</a><span>/</span>
+                <span class="breadcrumb-current">Bar Rules &amp; AI Content</span>
+            </nav>
+            <div class="article-category">Ethics</div>
+            <h1>Navigating Bar Rules in the Age of AI-Generated Content</h1>
+            <div class="article-meta">
+                <div class="article-author">
+                    <div class="author-avatar">M</div>
+                    <div class="author-info">
+                        <span class="author-name">Matt Sarson, Co-Founder</span>
+                        <span class="author-role">American Attorney Marketing Association</span>
+                    </div>
+                </div>
+                <div class="meta-divider"></div>
+                <span class="meta-item">April 2025</span>
+                <div class="meta-divider"></div>
+                <span class="meta-item">5 min read</span>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<div class="article-layout">
+    <article class="article-body">
+ 
+        <p class="article-intro">AI content tools are now part of everyday legal marketing. The firms using them well are producing more content, at higher quality, with less strain on attorney time. The firms using them poorly are producing content that could trigger a bar complaint. Understanding the difference requires knowing exactly where the rules create exposure, and where they don't.</p>
+ 
+        <h2 id="not-new">The Rules Aren't New. The Risks Are.</h2>
+        <p>Every state bar has rules governing attorney advertising. The Model Rules of Professional Conduct, and the state-level adaptations that follow them, have always required that attorney communications be truthful, non-deceptive, and not create unjustified expectations. None of that has changed. What has changed is the ease with which well-intentioned content can slide into problematic territory when it's generated at scale by a tool that has no awareness of jurisdictional requirements.</p>
+        <p>An AI writing tool doesn't know that your state prohibits comparative claims without substantiation. It doesn't know that certain practice area descriptions trigger specific disclosure requirements in California that don't apply in Texas. It doesn't flag when a client testimonial implication crosses into a guarantee. These are the gaps where exposure accumulates.</p>
+ 
+        <h2 id="three-risk-areas">Three Areas of Genuine Risk</h2>
+ 
+        <h3 id="truthfulness">1. Truthfulness and Accuracy</h3>
+        <p>Model Rule 7.1 prohibits false or misleading communications about an attorney or their services. AI tools can generate factually plausible but legally inaccurate content at speed. A blog post that misstates the standard for negligence in your jurisdiction, or that implies a success rate your firm hasn't achieved, isn't just a marketing problem: it's a potential ethics issue. Every piece of AI-generated content that makes substantive legal or factual claims needs human review before it goes live.</p>
+ 
+        <h3 id="testimonials">2. Testimonials and Implied Outcomes</h3>
+        <p>Many state bars have specific rules around client testimonials in attorney advertising. Even where testimonials are permitted, language that implies past results are predictive of future outcomes is typically prohibited. AI tools asked to write compelling case study content will often drift toward exactly this kind of language: "clients like yours have recovered" or "our attorneys have a proven track record of." These constructions may feel standard to a general content writer. In legal marketing, they create compliance exposure.</p>
+        <p>The fix isn't to avoid case studies. It's to establish clear editorial guidelines that any AI-generated draft must pass before approval: no outcome guarantees, no comparative rankings without substantiation, no language implying that past performance predicts future results.</p>
+ 
+        <h3 id="solicitation">3. Solicitation Rules</h3>
+        <p>Direct solicitation rules vary significantly by state and by communication type. Some jurisdictions impose specific requirements on email and direct mail content, including required disclosures, opt-out mechanisms, and prohibitions on contact with prospective clients in certain circumstances. If you're using AI to scale outreach or to draft targeted communications, the content needs to be reviewed against the solicitation rules of every jurisdiction in which those communications will land.</p>
+ 
+        <div class="warning-box">
+            <h3>A Note on Jurisdiction</h3>
+            <p>Bar rules on advertising and solicitation vary meaningfully by state. Content that is compliant in one jurisdiction may not be compliant in another. If your firm markets across state lines, your review process needs to account for this. When in doubt, consult your state bar's ethics hotline or engage ethics counsel before publishing.</p>
+        </div>
+ 
+        <h2 id="what-good-looks-like">What Good AI Content Governance Looks Like</h2>
+        <p>The firms navigating this well are not avoiding AI. They're building lightweight governance processes that make AI-generated content reliable without making it slow.</p>
+ 
+        <div class="callout">
+            <h3>A Practical Compliance Checklist for AI Content</h3>
+            <ul>
+                <li>Establish a style guide that explicitly prohibits outcome guarantees, unsubstantiated comparatives, and misleading practice area descriptions</li>
+                <li>Require attorney review of any content making specific legal or factual claims before publication</li>
+                <li>Build jurisdiction-specific rules into your prompts and editorial guidelines</li>
+                <li>Audit existing AI-generated content against your state bar's advertising rules at least annually</li>
+                <li>Check your state bar's formal guidance on AI in legal marketing: several bars have now issued specific opinions</li>
+                <li>If using AI to draft outreach or solicitation content, apply the same review standard as any other advertising communication</li>
+            </ul>
+        </div>
+ 
+        <h2 id="opportunity">The Opportunity Inside the Risk</h2>
+        <p>It's worth noting that most of the compliance risk in AI content is concentrated in a specific category: content that makes factual or outcome-based claims. For the majority of legal content, which is educational, informational, and designed to demonstrate expertise rather than promise results, AI is a genuinely low-risk productivity accelerator.</p>
+        <p>Attorneys who understand the rules are in a better position than their competitors to use AI aggressively and safely. The compliance overhead is real, but it's not large. A clear set of editorial guidelines, a consistent review process for high-risk content types, and awareness of where your state bar has issued specific guidance: that is most of what you need.</p>
+        <p>The firms that will be disadvantaged are the ones that either avoid AI entirely out of an abundance of caution, or that use it without any governance at all. The ones that build a sensible middle path will outproduce their peers on content volume and quality, without taking on disproportionate compliance risk in the process.</p>
+ 
+    </article>
+ 
+    <aside class="article-sidebar">
+        <div class="sidebar-card">
+            <h4>In This Article</h4>
+            <ul class="toc-list">
+                <li><a href="#not-new"><span class="toc-dot"></span> The Rules Aren't New</a></li>
+                <li><a href="#three-risk-areas"><span class="toc-dot"></span> Three Risk Areas</a></li>
+                <li><a href="#truthfulness"><span class="toc-dot"></span> Truthfulness &amp; Accuracy</a></li>
+                <li><a href="#testimonials"><span class="toc-dot"></span> Testimonials</a></li>
+                <li><a href="#solicitation"><span class="toc-dot"></span> Solicitation Rules</a></li>
+                <li><a href="#what-good-looks-like"><span class="toc-dot"></span> What Good Looks Like</a></li>
+                <li><a href="#opportunity"><span class="toc-dot"></span> The Opportunity</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-cta">
+            <h4>Join the AAMA Community</h4>
+            <p>Connect with attorneys committed to ethical, effective marketing practice.</p>
+            <a href="index.html#contact">Apply for Membership</a>
+        </div>
+    </aside>
+</div>
+ 
+<footer>
+    <div class="container">
+        <p class="footer-tagline">Building the future of legal marketing through collaboration, innovation, and proven results</p>
+        <p class="footer-copyright">&copy; 2025 American Attorney Marketing Association. All rights reserved.</p>
+    </div>
+</footer>
+ 
+</body>
+</html>
+ 
