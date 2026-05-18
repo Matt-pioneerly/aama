@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/library.html",
+      "destination": "/library",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/library", "destination": "/library.html" },
+    { "source": "/top-7-legal-marketing-agencies", "destination": "/top-7-legal-marketing-agencies.html" },
+    { "source": "/navigating-bar-rules-ai-content", "destination": "/navigating-bar-rules-ai-content.html" },
+    { "source": "/local-search-2025-solo-attorneys", "destination": "/local-search-2025-solo-attorneys.html" },
+    { "source": "/ai-intake-tools-law-firms", "destination": "/ai-intake-tools-law-firms.html" },
+    { "source": "/referral-network-attorneys-overlook", "destination": "/referral-network-attorneys-overlook.html" },
+    { "source": "/solo-practitioner-doubled-consultations", "destination": "/solo-practitioner-doubled-consultations.html" }
+  ]
+}
