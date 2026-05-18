@@ -598,12 +598,13 @@
         <div class="container">
             <div class="filter-inner">
                 <span class="filter-label">Filter by</span>
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Practice Growth</button>
-                <button class="filter-btn">Ethics</button>
-                <button class="filter-btn">SEO</button>
-                <button class="filter-btn">AI &amp; Technology</button>
-                <button class="filter-btn">Case Studies</button>
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Rankings & Reviews">Rankings &amp; Reviews</button>
+                <button class="filter-btn" data-filter="Practice Growth">Practice Growth</button>
+                <button class="filter-btn" data-filter="Ethics">Ethics</button>
+                <button class="filter-btn" data-filter="SEO">SEO</button>
+                <button class="filter-btn" data-filter="AI & Technology">AI &amp; Technology</button>
+                <button class="filter-btn" data-filter="Case Studies">Case Studies</button>
             </div>
         </div>
     </div>
@@ -629,7 +630,7 @@
                         <span class="featured-badge">Featured</span>
                         <div class="blog-meta">
                             <span class="blog-category">Rankings &amp; Reviews</span>
-                            <span class="blog-date">May 2025</span>
+                            <span class="blog-date">May 2026</span>
                             <span class="blog-read-time">12 min read</span>
                         </div>
                         <a href="top-7-legal-marketing-agencies.html" class="blog-title">The Top 7 Legal Marketing Agencies in the U.S. Right Now</a>
@@ -642,7 +643,7 @@
                 <article class="blog-card">
                     <div class="blog-meta">
                         <span class="blog-category">Ethics</span>
-                        <span class="blog-date">April 2025</span>
+                        <span class="blog-date">April 2026</span>
                         <span class="blog-read-time">5 min read</span>
                     </div>
                     <a href="navigating-bar-rules-ai-content.html" class="blog-title">Navigating Bar Rules in the Age of AI-Generated Content</a>
@@ -653,7 +654,7 @@
                 <article class="blog-card">
                     <div class="blog-meta">
                         <span class="blog-category">SEO</span>
-                        <span class="blog-date">March 2025</span>
+                        <span class="blog-date">March 2026</span>
                         <span class="blog-read-time">7 min read</span>
                     </div>
                     <a href="local-search-2025-solo-attorneys.html" class="blog-title">Local Search in 2025: What Solo Attorneys Need to Know</a>
@@ -664,7 +665,7 @@
                 <article class="blog-card">
                     <div class="blog-meta">
                         <span class="blog-category">AI &amp; Technology</span>
-                        <span class="blog-date">February 2025</span>
+                        <span class="blog-date">February 2026</span>
                         <span class="blog-read-time">8 min read</span>
                     </div>
                     <a href="ai-intake-tools-law-firms.html" class="blog-title">AI Intake Tools: What Law Firms Are Getting Wrong</a>
@@ -675,7 +676,7 @@
                 <article class="blog-card">
                     <div class="blog-meta">
                         <span class="blog-category">Practice Growth</span>
-                        <span class="blog-date">January 2025</span>
+                        <span class="blog-date">January 2026</span>
                         <span class="blog-read-time">4 min read</span>
                     </div>
                     <a href="referral-network-attorneys-overlook.html" class="blog-title">The Referral Network Most Attorneys Overlook</a>
@@ -686,7 +687,7 @@
                 <article class="blog-card">
                     <div class="blog-meta">
                         <span class="blog-category">Case Studies</span>
-                        <span class="blog-date">December 2024</span>
+                        <span class="blog-date">December 2025</span>
                         <span class="blog-read-time">9 min read</span>
                     </div>
                     <a href="solo-practitioner-doubled-consultations.html" class="blog-title">How One Solo Practitioner Doubled Consultations in 90 Days</a>
@@ -694,6 +695,11 @@
                     <a href="solo-practitioner-doubled-consultations.html" class="blog-link">Read article</a>
                 </article>
  
+            </div>
+ 
+            <!-- Empty state -->
+            <div id="no-results" style="display:none; text-align:center; padding:4rem 0;">
+                <p style="font-size:1.125rem; color:var(--text-light);">No articles in this category yet. Check back soon.</p>
             </div>
  
             <!-- Pagination -->
@@ -727,15 +733,37 @@
     </footer>
  
     <script>
-        // Filter button toggle
-        document.querySelectorAll('.filter-btn').forEach(btn => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.blog-card, .blog-card--hero');
+        const noResults = document.getElementById('no-results');
+ 
+        filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+ 
+                const filter = btn.dataset.filter;
+ 
+                let visibleCount = 0;
+ 
+                cards.forEach(card => {
+                    const categoryEl = card.querySelector('.blog-category');
+                    const category = categoryEl ? categoryEl.textContent.trim() : '';
+ 
+                    const show = filter === 'all' || category === filter;
+ 
+                    card.style.display = show ? '' : 'none';
+                    if (show) visibleCount++;
+                });
+ 
+                // Show/hide empty state
+                if (noResults) {
+                    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+                }
             });
         });
     </script>
  
 </body>
 </html>
- 
