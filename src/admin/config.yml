@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  branch: main
+  base_url: https://YOUR_VERCEL_OAUTH_APP_URL
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "posts"
+    label: "Library Articles"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description (SEO)", name: "description", widget: "string" }
+      - { label: "Excerpt (shown on library page)", name: "excerpt", widget: "text" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Rankings & Reviews"
+          - "Practice Growth"
+          - "Ethics"
+          - "SEO"
+          - "AI & Technology"
+          - "Case Studies"
+      - { label: "Read Time (minutes)", name: "readTime", widget: "number", default: 5 }
+      - { label: "Author", name: "author", widget: "string", default: "David Reynolds" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/article.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }

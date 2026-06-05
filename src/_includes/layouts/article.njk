@@ -1,0 +1,54 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>/</span>
+        <a href="/library">Library</a><span>/</span>
+        <span class="breadcrumb-current">{{ breadcrumbLabel or title }}</span>
+      </nav>
+      <div class="article-category">{{ category }}</div>
+      <h1>{{ title }}</h1>
+      <div class="article-meta">
+        <div class="article-author">
+          <div class="author-avatar">{{ author[0] }}</div>
+          <div class="author-info">
+            <span class="author-name">{{ author }}</span>
+            <span class="author-role">American Attorney Marketing Association</span>
+          </div>
+        </div>
+        <div class="meta-divider"></div>
+        <span class="meta-item">{{ date | postDate }}</span>
+        <div class="meta-divider"></div>
+        <span class="meta-item">{{ readTime }} min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article-body">
+    {{ content | safe }}
+  </article>
+
+  <aside class="article-sidebar">
+    {% if toc %}
+    <div class="sidebar-card">
+      <h4>In This Article</h4>
+      <ul class="toc-list">
+        {% for item in toc %}
+        <li><a href="#{{ item.id }}"><span class="toc-dot"></span> {{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <div class="sidebar-cta">
+      <h4>Join the AAMA Community</h4>
+      <p>Connect with attorneys building more systematic, effective practices.</p>
+      <a href="/#contact">Apply for Membership</a>
+    </div>
+  </aside>
+</div>
+{% endblock %}

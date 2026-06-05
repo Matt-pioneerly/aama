@@ -1,0 +1,131 @@
+---
+layout: base.njk
+title: The AAMA Library
+description: Practical articles, case studies, and guides on legal marketing, practice growth, AI adoption, and ethical marketing standards for attorneys.
+ogType: website
+permalink: /library/
+---
+
+{% block extraCss %}
+<style>
+.blog-main { padding: 5rem 0 7rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="section-label">Insights</div>
+      <h1>The AAMA Library</h1>
+      <p>Practical perspectives on legal marketing, practice growth, and professional excellence for today's attorney</p>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <span class="filter-label">Filter by</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Rankings &amp; Reviews">Rankings &amp; Reviews</button>
+      <button class="filter-btn" data-filter="Practice Growth">Practice Growth</button>
+      <button class="filter-btn" data-filter="Ethics">Ethics</button>
+      <button class="filter-btn" data-filter="SEO">SEO</button>
+      <button class="filter-btn" data-filter="AI &amp; Technology">AI &amp; Technology</button>
+      <button class="filter-btn" data-filter="Case Studies">Case Studies</button>
+    </div>
+  </div>
+</div>
+
+<section class="blog-main">
+  <div class="container">
+    <div class="blog-grid">
+
+      {%- set featuredPost = collections.posts | first -%}
+      {%- set otherPosts = collections.posts | slice(1) -%}
+
+      {%- if featuredPost %}
+      <article class="blog-card--hero">
+        <div class="blog-card-visual">
+          <div class="blog-card-visual-inner">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="60" height="60" rx="8"/>
+              <line x1="22" y1="30" x2="58" y2="30"/>
+              <line x1="22" y1="42" x2="58" y2="42"/>
+              <line x1="22" y1="54" x2="44" y2="54"/>
+            </svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <span class="featured-badge">Featured</span>
+          <div class="blog-meta">
+            <span class="blog-category">{{ featuredPost.data.category }}</span>
+            <span class="blog-date">{{ featuredPost.date | postDate }}</span>
+            <span class="blog-read-time">{{ featuredPost.data.readTime }} min read</span>
+          </div>
+          <a href="{{ featuredPost.url }}" class="blog-title">{{ featuredPost.data.title }}</a>
+          <p class="blog-excerpt">{{ featuredPost.data.excerpt }}</p>
+          <a href="{{ featuredPost.url }}" class="blog-link">Read article</a>
+        </div>
+      </article>
+      {%- endif %}
+
+      {%- for post in otherPosts %}
+      <article class="blog-card">
+        <div class="blog-meta">
+          <span class="blog-category">{{ post.data.category }}</span>
+          <span class="blog-date">{{ post.date | postDate }}</span>
+          <span class="blog-read-time">{{ post.data.readTime }} min read</span>
+        </div>
+        <a href="{{ post.url }}" class="blog-title">{{ post.data.title }}</a>
+        <p class="blog-excerpt">{{ post.data.excerpt }}</p>
+        <a href="{{ post.url }}" class="blog-link">Read article</a>
+      </article>
+      {%- endfor %}
+
+    </div>
+
+    <div id="no-results" style="display:none; text-align:center; padding:4rem 0;">
+      <p style="font-size:1.125rem; color:var(--text-light);">No articles in this category yet. Check back soon.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-content">
+      <h2>Ready to grow your practice?</h2>
+      <p>Join attorneys across the country who are building more sustainable, referral-driven practices through AAMA membership.</p>
+      <a href="/#contact" class="cta-strip-btn">Apply for Membership</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.blog-card, .blog-card--hero');
+  const noResults = document.getElementById('no-results');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const category = card.querySelector('.blog-category')?.textContent.trim() || '';
+        const show = filter === 'all' || category === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+      });
+      if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    });
+  });
+</script>
+{% endblock %}

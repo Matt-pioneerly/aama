@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | American Attorney Marketing Association</title>
+  <meta name="description" content="{{ description }}">
+  <meta property="og:title" content="{{ title }} | AAMA">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:url" content="https://www.am-ama.org{{ page.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }} | AAMA">
+  <meta name="twitter:description" content="{{ description }}">
+  <link rel="stylesheet" href="/css/main.css">
+  {% block extraCss %}{% endblock %}
+</head>
+<body>
+
+  {% include "header.njk" %}
+
+  {% block content %}{% endblock %}
+
+  {% include "footer.njk" %}
+
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>

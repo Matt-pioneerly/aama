@@ -1,0 +1,11 @@
+<header>
+  <div class="container">
+    <div class="header-container">
+      <a href="/"><img src="/assets/logo.png" alt="American Attorney Marketing Association" class="logo"></a>
+      <nav class="header-nav">
+        <a href="/library" {% if page.url.startsWith('/library') or page.url.startsWith('/top-7') or page.url.startsWith('/navigating') or page.url.startsWith('/local-search') or page.url.startsWith('/ai-intake') or page.url.startsWith('/referral') or page.url.startsWith('/solo') %}class="active"{% endif %}>Library</a>
+        <a href="/#contact" class="header-cta">Apply for Membership</a>
+      </nav>
+    </div>
+  </div>
+</header>
