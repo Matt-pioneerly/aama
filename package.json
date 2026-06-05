@@ -1,0 +1,13 @@
+{
+  "name": "aama-website",
+  "version": "1.0.0",
+  "description": "American Attorney Marketing Association website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
+  }
+}
