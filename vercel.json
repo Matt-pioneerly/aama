@@ -11,10 +11,8 @@
       ]
     }
   ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" }
-  ],
   "redirects": [
+    { "source": "/admin", "destination": "/admin/", "permanent": false },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/library.html", "destination": "/library", "permanent": true },
     { "source": "/top-7-legal-marketing-agencies.html", "destination": "/top-7-legal-marketing-agencies", "permanent": true },
@@ -23,5 +21,8 @@
     { "source": "/ai-intake-tools-law-firms.html", "destination": "/ai-intake-tools-law-firms", "permanent": true },
     { "source": "/referral-network-attorneys-overlook.html", "destination": "/referral-network-attorneys-overlook", "permanent": true },
     { "source": "/solo-practitioner-doubled-consultations.html", "destination": "/solo-practitioner-doubled-consultations", "permanent": true }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" }
   ]
 }
