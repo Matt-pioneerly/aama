@@ -938,5 +938,9 @@ section.hero::before {
   .blog-grid { grid-template-columns: 1fr; }
   .article-layout { padding: 3rem 1.5rem 4rem; }
   .article-hero { padding: 4rem 0 3.5rem; }
+   /* Offset anchor targets to account for sticky header */
+h2[id], h3[id] {
+  scroll-margin-top: 100px;
+}
 }
  
