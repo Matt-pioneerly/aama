@@ -6,14 +6,6 @@ ogType: website
 permalink: /library/
 ---
 
-{% block extraCss %}
-<style>
-.blog-main { padding: 5rem 0 7rem; }
-</style>
-{% endblock %}
-
-{% block content %}
-
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-content">
@@ -39,14 +31,13 @@ permalink: /library/
   </div>
 </div>
 
-<section class="blog-main">
+<section style="padding: 5rem 0 7rem;">
   <div class="container">
     <div class="blog-grid">
 
-      {%- set featuredPost = collections.posts | first -%}
-      {%- set otherPosts = collections.posts | slice(1) -%}
+      {%- for post in collections.posts %}
+      {%- if loop.first %}
 
-      {%- if featuredPost %}
       <article class="blog-card--hero">
         <div class="blog-card-visual">
           <div class="blog-card-visual-inner">
@@ -61,18 +52,18 @@ permalink: /library/
         <div class="blog-card-body">
           <span class="featured-badge">Featured</span>
           <div class="blog-meta">
-            <span class="blog-category">{{ featuredPost.data.category }}</span>
-            <span class="blog-date">{{ featuredPost.date | postDate }}</span>
-            <span class="blog-read-time">{{ featuredPost.data.readTime }} min read</span>
+            <span class="blog-category">{{ post.data.category }}</span>
+            <span class="blog-date">{{ post.date | postDate }}</span>
+            <span class="blog-read-time">{{ post.data.readTime }} min read</span>
           </div>
-          <a href="{{ featuredPost.url }}" class="blog-title">{{ featuredPost.data.title }}</a>
-          <p class="blog-excerpt">{{ featuredPost.data.excerpt }}</p>
-          <a href="{{ featuredPost.url }}" class="blog-link">Read article</a>
+          <a href="{{ post.url }}" class="blog-title">{{ post.data.title }}</a>
+          <p class="blog-excerpt">{{ post.data.excerpt }}</p>
+          <a href="{{ post.url }}" class="blog-link">Read article</a>
         </div>
       </article>
-      {%- endif %}
 
-      {%- for post in otherPosts %}
+      {%- else %}
+
       <article class="blog-card">
         <div class="blog-meta">
           <span class="blog-category">{{ post.data.category }}</span>
@@ -83,6 +74,8 @@ permalink: /library/
         <p class="blog-excerpt">{{ post.data.excerpt }}</p>
         <a href="{{ post.url }}" class="blog-link">Read article</a>
       </article>
+
+      {%- endif %}
       {%- endfor %}
 
     </div>
@@ -104,9 +97,6 @@ permalink: /library/
   </div>
 </section>
 
-{% endblock %}
-
-{% block scripts %}
 <script>
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.blog-card, .blog-card--hero');
@@ -128,4 +118,3 @@ permalink: /library/
     });
   });
 </script>
-{% endblock %}
