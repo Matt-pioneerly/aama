@@ -1,6 +1,3 @@
-
-raw
-Local search 2025 solo attorneys · MD
 ---
 title: What Solo Attorneys Need to Know About Local Search in 2026
 description: Google local search has shifted significantly. Solo attorneys who built visibility on approaches that worked in 2022 are seeing diminishing returns. Here is what changed and how to adjust.
@@ -69,3 +66,4 @@ What hasn't changed is the importance of consistency. Inconsistent name, address
     <li>Add a minimum of three practice-area-specific service entries to your GBP listing</li>
   </ul>
 </div>
+ 
