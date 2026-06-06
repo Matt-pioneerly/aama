@@ -1,6 +1,6 @@
----
-layout: base.njk
----
+{% extends "base.njk" %}
+
+{% block content %}
 <section class="article-hero">
   <div class="container">
     <div class="article-hero-inner">
@@ -32,17 +32,12 @@ layout: base.njk
   <article class="article-body">
     {{ content | safe }}
   </article>
+
   <aside class="article-sidebar">
-    {% if toc %}
-    <div class="sidebar-card">
+    <div class="sidebar-card" id="toc-card" style="display:none;">
       <h4>In This Article</h4>
-      <ul class="toc-list">
-        {% for item in toc %}
-        <li><a href="#{{ item.id }}"><span class="toc-dot"></span> {{ item.label }}</a></li>
-        {% endfor %}
-      </ul>
+      <ul class="toc-list" id="toc-list"></ul>
     </div>
-    {% endif %}
     <div class="sidebar-cta">
       <h4>Join the AAMA Community</h4>
       <p>Connect with attorneys building more systematic, effective practices.</p>
@@ -50,3 +45,32 @@ layout: base.njk
     </div>
   </aside>
 </div>
+
+<script>
+  (function() {
+    const headings = document.querySelectorAll('.article-body h2[id], .article-body h3[id]');
+    const tocList = document.getElementById('toc-list');
+    const tocCard = document.getElementById('toc-card');
+
+    if (headings.length < 2) return;
+
+    headings.forEach(function(heading) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      const dot = document.createElement('span');
+      dot.className = 'toc-dot';
+      a.href = '#' + heading.id;
+      a.appendChild(dot);
+      a.appendChild(document.createTextNode(' ' + heading.textContent));
+      if (heading.tagName === 'H3') {
+        a.style.paddingLeft = '1.25rem';
+        a.style.fontSize = '0.875rem';
+      }
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    tocCard.style.display = 'block';
+  })();
+</script>
+{% endblock %}
