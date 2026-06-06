@@ -13,17 +13,10 @@
   <meta name="twitter:title" content="{{ title }} | AAMA">
   <meta name="twitter:description" content="{{ description }}">
   <link rel="stylesheet" href="/css/main.css">
-  {% block extraCss %}{% endblock %}
 </head>
 <body>
-
   {% include "header.njk" %}
-
-  {% block content %}{% endblock %}
-
+  {{ content | safe }}
   {% include "footer.njk" %}
-
-  {% block scripts %}{% endblock %}
-
 </body>
 </html>
