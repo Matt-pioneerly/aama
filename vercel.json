@@ -2,6 +2,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "_site",
   "installCommand": "npm install",
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" }
+  ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/library.html", "destination": "/library", "permanent": true },
