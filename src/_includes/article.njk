@@ -1,5 +1,6 @@
-{% extends "base.njk" %}
-{% block content %}
+---
+layout: base.njk
+---
 <section class="article-hero">
   <div class="container">
     <div class="article-hero-inner">
@@ -31,7 +32,6 @@
   <article class="article-body">
     {{ content | safe }}
   </article>
-
   <aside class="article-sidebar">
     {% if toc %}
     <div class="sidebar-card">
@@ -50,4 +50,3 @@
     </div>
   </aside>
 </div>
-{% endblock %}
