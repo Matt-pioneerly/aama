@@ -16,7 +16,8 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("postDate", function(date) {
-    return new Date(date).toLocaleDateString("en-US", {
+    const d = date instanceof Date ? date : new Date(date);
+    return d.toLocaleDateString("en-US", {
       month: "long",
       year: "numeric",
       timeZone: "UTC"
