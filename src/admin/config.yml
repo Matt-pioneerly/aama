@@ -2,7 +2,8 @@ backend:
   name: github
   repo: Matt-pioneerly/aama
   branch: main
-  base_url: https://YOUR_VERCEL_OAUTH_APP_URL
+  base_url: https://www.am-ama.org
+  auth_endpoint: api/auth
 
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
