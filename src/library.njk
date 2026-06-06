@@ -35,9 +35,11 @@ permalink: /library/
   <div class="container">
     <div class="blog-grid">
 
-      {%- for post in collections.posts %}
-      {%- if loop.first %}
+      {%- set featuredPost = collections.posts | featured %}
 
+      {%- for post in collections.posts %}
+
+      {%- if post.url == featuredPost.url %}
       <article class="blog-card--hero">
         <div class="blog-card-visual">
           <div class="blog-card-visual-inner">
