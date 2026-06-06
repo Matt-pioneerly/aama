@@ -31,5 +31,5 @@ collections:
           - "Case Studies"
       - { label: "Read Time (minutes)", name: "readTime", widget: "number", default: 5 }
       - { label: "Author", name: "author", widget: "string", default: "David Reynolds" }
-      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/article.njk" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "article.njk" }
       - { label: "Body", name: "body", widget: "markdown" }
