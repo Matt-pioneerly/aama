@@ -37,9 +37,6 @@ permalink: /library/
 
       {%- set featuredPost = collections.posts | featured %}
 
-      {%- for post in collections.posts %}
-
-      {%- if post.url == featuredPost.url %}
       <article class="blog-card--hero">
         <div class="blog-card-visual">
           <div class="blog-card-visual-inner">
@@ -54,18 +51,18 @@ permalink: /library/
         <div class="blog-card-body">
           <span class="featured-badge">Featured</span>
           <div class="blog-meta">
-            <span class="blog-category">{{ post.data.category }}</span>
-            <span class="blog-date">{{ post.date | postDate }}</span>
-            <span class="blog-read-time">{{ post.data.readTime }} min read</span>
+            <span class="blog-category">{{ featuredPost.data.category }}</span>
+            <span class="blog-date">{{ featuredPost.date | postDate }}</span>
+            <span class="blog-read-time">{{ featuredPost.data.readTime }} min read</span>
           </div>
-          <a href="{{ post.url }}" class="blog-title">{{ post.data.title }}</a>
-          <p class="blog-excerpt">{{ post.data.excerpt }}</p>
-          <a href="{{ post.url }}" class="blog-link">Read article</a>
+          <a href="{{ featuredPost.url }}" class="blog-title">{{ featuredPost.data.title }}</a>
+          <p class="blog-excerpt">{{ featuredPost.data.excerpt }}</p>
+          <a href="{{ featuredPost.url }}" class="blog-link">Read article</a>
         </div>
       </article>
 
-      {%- else %}
-
+      {%- for post in collections.posts %}
+      {%- if post.url != featuredPost.url %}
       <article class="blog-card">
         <div class="blog-meta">
           <span class="blog-category">{{ post.data.category }}</span>
@@ -76,7 +73,6 @@ permalink: /library/
         <p class="blog-excerpt">{{ post.data.excerpt }}</p>
         <a href="{{ post.url }}" class="blog-link">Read article</a>
       </article>
-
       {%- endif %}
       {%- endfor %}
 
