@@ -8,6 +8,7 @@ author: David Reynolds
 excerpt: AI content tools create real compliance exposure for attorneys. Understanding where the bar rules create risk, and how to build a governance process that lets you use AI safely and at scale, is now an essential part of any legal marketing strategy.
 permalink: /navigating-bar-rules-ai-content/
 layout: article.njk
+featured: true
 breadcrumbLabel: Bar Rules & AI Content
 toc:
   - id: not-new
