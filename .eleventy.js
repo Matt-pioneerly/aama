@@ -8,13 +8,6 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").reverse();
   });
 
-  eleventyConfig.addCollection("featuredPost", function(collectionApi) {
-    const posts = collectionApi.getFilteredByGlob("src/posts/*.md").reverse();
-    return posts.filter(p => p.data.featured).length > 0
-      ? posts.filter(p => p.data.featured)
-      : [posts[0]];
-  });
-
   eleventyConfig.addFilter("postDate", function(date) {
     const d = date instanceof Date ? date : new Date(date);
     return d.toLocaleDateString("en-US", {
@@ -26,6 +19,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("slugify", function(str) {
     return str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  });
+
+  eleventyConfig.addFilter("featured", function(posts) {
+    return posts.find(p => p.data.featured) || posts[0];
   });
 
   return {
