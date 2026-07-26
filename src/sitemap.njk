@@ -17,7 +17,6 @@ eleventyExcludeFromCollections: true
   {%- for post in collections.posts %}
   <url>
     <loc>https://www.am-ama.org{{ post.url }}</loc>
-    <lastmod>{{ post.date | postDate }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
